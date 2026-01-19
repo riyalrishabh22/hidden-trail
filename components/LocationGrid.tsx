@@ -1,14 +1,16 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect, useRef, useCallback } from "react";
 import { Location } from "@/types";
 import LocationCard from "./LocationCard";
 import SearchBar from "./SearchBar";
 import CategoryFilter from "./CategoryFilter";
+import { generateSlug } from "@/lib/utils";
 
 interface LocationGridProps {
   locations: Location[];
   categories: string[];
+  highlightedSlug?: string;
 }
 
 // Fuzzy search function to handle typos and partial matches
@@ -66,9 +68,39 @@ function levenshteinDistance(str1: string, str2: string): number {
   return matrix[len1][len2];
 }
 
-export default function LocationGrid({ locations, categories }: LocationGridProps) {
+export default function LocationGrid({ locations, categories, highlightedSlug }: LocationGridProps) {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
+  const locationRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
+
+  const setLocationRef = useCallback((slug: string, element: HTMLDivElement | null) => {
+    locationRefs.current[slug] = element;
+  }, []);
+
+  // Auto-search for highlighted location
+  useEffect(() => {
+    if (highlightedSlug) {
+      const location = locations.find(
+        (loc) => generateSlug(loc.name) === highlightedSlug
+      );
+      if (location) {
+        setSearchTerm(location.name);
+        setSelectedCategory("All");
+      }
+    }
+  }, [highlightedSlug, locations]);
+
+  // Scroll to highlighted location
+  useEffect(() => {
+    if (highlightedSlug && locationRefs.current[highlightedSlug]) {
+      setTimeout(() => {
+        locationRefs.current[highlightedSlug]?.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+      }, 100);
+    }
+  }, [highlightedSlug]);
 
   const filteredLocations = useMemo(() => {
     return locations.filter((location) => {
@@ -109,9 +141,17 @@ export default function LocationGrid({ locations, categories }: LocationGridProp
       {/* Location Cards Grid */}
       {filteredLocations.length > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredLocations.map((location) => (
-            <LocationCard key={location.id} location={location} />
-          ))}
+          {filteredLocations.map((location) => {
+            const slug = generateSlug(location.name);
+            return (
+              <LocationCard
+                key={location.id}
+                location={location}
+                ref={(el) => setLocationRef(slug, el)}
+                isHighlighted={highlightedSlug === slug}
+              />
+            );
+          })}
         </div>
       ) : (
         <div className="text-center py-16">

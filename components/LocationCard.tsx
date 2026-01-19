@@ -3,43 +3,52 @@
 import Image from "next/image";
 import { Location } from "@/types";
 import { MapPin, ExternalLink, ImageOff, Share2 } from "lucide-react";
-import { useState } from "react";
+import { useState, forwardRef } from "react";
 import { generateSlug } from "@/lib/utils";
 
 interface LocationCardProps {
   location: Location;
+  isHighlighted?: boolean;
 }
 
-export default function LocationCard({ location }: LocationCardProps) {
-  const mainImage = location.images?.[0];
-  const [shareSuccess, setShareSuccess] = useState(false);
-  const slug = generateSlug(location.name);
+const LocationCard = forwardRef<HTMLDivElement, LocationCardProps>(
+  ({ location, isHighlighted = false }, ref) => {
+    const mainImage = location.images?.[0];
+    const [shareSuccess, setShareSuccess] = useState(false);
+    const slug = generateSlug(location.name);
 
-  const handleShare = async (e: React.MouseEvent) => {
-    e.preventDefault();
-    e.stopPropagation();
-    
-    const url = `${window.location.origin}?location=${slug}`;
+    const handleShare = async (e: React.MouseEvent) => {
+      e.preventDefault();
+      e.stopPropagation();
 
-    try {
-      if (navigator.share) {
-        await navigator.share({
-          title: `${location.name} - Hidden Trails Rishikesh`,
-          text: location.description,
-          url: url,
-        });
-      } else {
-        await navigator.clipboard.writeText(url);
-        setShareSuccess(true);
-        setTimeout(() => setShareSuccess(false), 2000);
+      const url = `${window.location.origin}?location=${slug}`;
+
+      try {
+        if (navigator.share) {
+          await navigator.share({
+            title: `${location.name} - Hidden Trails Rishikesh`,
+            text: location.description,
+            url: url,
+          });
+        } else {
+          await navigator.clipboard.writeText(url);
+          setShareSuccess(true);
+          setTimeout(() => setShareSuccess(false), 2000);
+        }
+      } catch (error) {
+        console.error("Error sharing:", error);
       }
-    } catch (error) {
-      console.error("Error sharing:", error);
-    }
-  };
+    };
 
-  return (
-    <div className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+    return (
+      <div
+        ref={ref}
+        className={`group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border ${
+          isHighlighted
+            ? "border-emerald-500 ring-4 ring-emerald-200 animate-pulse"
+            : "border-gray-100"
+        }`}
+      >
         {/* Image Container */}
         <div className="relative h-56 overflow-hidden bg-gray-100">
           {mainImage ? (
@@ -98,5 +107,10 @@ export default function LocationCard({ location }: LocationCardProps) {
           </button>
         </div>
       </div>
-  );
-}
+    );
+  }
+);
+
+LocationCard.displayName = "LocationCard";
+
+export default LocationCard;
