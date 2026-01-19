@@ -6,6 +6,7 @@ import { Location } from "@/types";
 import { MapPin, ExternalLink, Share2, ArrowLeft, ImageOff } from "lucide-react";
 import { useState } from "react";
 import { generateSlug } from "@/lib/utils";
+import AdSense from "./AdSense";
 
 interface LocationDetailProps {
   location: Location;
@@ -75,6 +76,11 @@ export default function LocationDetail({ location }: LocationDetailProps) {
 
           {/* Content */}
           <div className="p-5 md:p-8">
+            {/* AdSense Ad - Top of Content */}
+            <div className="mb-6 md:mb-8">
+              <AdSense adSlot="4590652479" />
+            </div>
+            
             <div className="flex items-start justify-between gap-3 md:gap-4 mb-4 md:mb-6">
               <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
                 {location.name}
