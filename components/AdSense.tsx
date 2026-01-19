@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 interface AdSenseProps {
   adSlot: string;
@@ -15,15 +15,26 @@ export default function AdSense({
   fullWidthResponsive = true,
   style = { display: "block" },
 }: AdSenseProps) {
+  const [isMounted, setIsMounted] = useState(false);
+
   useEffect(() => {
-    try {
-      if (typeof window !== "undefined") {
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-      }
-    } catch (error) {
-      console.error("AdSense error:", error);
-    }
+    setIsMounted(true);
   }, []);
+
+  useEffect(() => {
+    if (isMounted) {
+      try {
+        (window.adsbygoogle = window.adsbygoogle || []).push({});
+      } catch (error) {
+        console.error("AdSense error:", error);
+      }
+    }
+  }, [isMounted]);
+
+  // Only render on client side to avoid hydration mismatch
+  if (!isMounted) {
+    return <div style={{ minHeight: "100px" }} />;
+  }
 
   return (
     <ins
