@@ -91,8 +91,12 @@ export default async function LocationPage({ params }: PageProps) {
   };
 
   return (
-    <>\n      <script
+    <>
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />\n      <LocationDetail location={location} />\n    </>\n  );
+      />
+      <LocationDetail location={location} />
+    </>
+  );
 }
