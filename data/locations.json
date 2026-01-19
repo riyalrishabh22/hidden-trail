@@ -63,6 +63,46 @@
         "description": "A popular, laid-back, treehouse-style cafe on the Laxman Jhula road, known among backpackers for its multi-cuisine menu (including vegan options) and outstanding views of the river and mountains from its balconies.",
         "images": ["/images/little-buddha-cafe/image1.png"],
         "mapsLink": "https://maps.app.goo.gl/opH2gKMyfQWgRyLYA"
+    },
+    {
+        "id": 9,
+        "name": "Kyarki Sunset Point",
+        "category": "Viewpoint / Moutain / Sunset",
+        "description": "A breathtaking vantage point situated on the hill top near the Neer Garh Waterfall road. It is famous for offering mesmerizing golden sunset views over the mountains and the shimmering Ganges river below, making it a favorite spot for photographers and nature lovers.",
+        "images": ["/images/kyarki/image1.png"],
+        "mapsLink": "https://maps.app.goo.gl/m6jUFPhBZUnq2hDF9"
+    },
+    {
+        "id": 10,
+        "name": "Balkuwari Mata Mandir",
+        "category": "Temple/Pilgrimage",
+        "description": "Balkumari Temple is a sacred hilltop shrine dedicated to Goddess Parvati in her child form (Bal). Located approximately 25–44 km from Rishikesh in the Pauri Garhwal district, it is one of the region's 'Siddh Peeths'. The temple is renowned for its spiritual tranquility and the approximately 300–400 stone steps visitors must climb to reach the summit, which offers panoramic views of the Hanwal River valley and surrounding Himalayan ranges.",
+        "images": ["/images/balkuwari/image1.png"],
+        "mapsLink": "https://maps.app.goo.gl/sesWuvKCgM8RCZsg9"
+    },
+    {
+        "id": 11,
+        "name": "Sai Ghat Laxman Jhula",
+        "category": "Ghat / Spirituality",
+        "description": "Considered one of the cleanest and most serene ghats in Rishikesh, Sai Ghat is located near the iconic Laxman Jhula. It is less crowded than other major ghats, making it an ideal spot for yoga, meditation, and quiet reflection. The ghat features beautiful idols of Lord Shiva, Vishnu, and Mother Ganga, and hosts a peaceful evening Ganga Aarti performed by students from the nearby Sathya Sai school.",
+        "images": ["/images/sai-ghat/image1.png"],
+        "mapsLink": "https://maps.app.goo.gl/wxPgMDfX4FrAU5TQA"
+    },
+    {
+        "id": 12,
+        "name": "OM Freedom Cafe",
+        "category": "Cafe / Restaurant",
+        "description": "A well-known backpacker haven situated on the banks of the Ganges near Laxman Jhula. Known for its relaxed bamboo-themed interior and soulful music, the cafe offers a multi-cuisine menu including Israeli, Italian, and vegan options. It is highly popular for its unobstructed views of the river and the mountains, especially during sunset.",
+        "images": ["/images/freedom-cafe/image1.png"],
+        "mapsLink": "https://maps.app.goo.gl/g4KR9QQrmcMq7Uxy9"
+    },
+    {
+        "id": 13,
+        "name": "Parmarth Niketan Aarti Point",
+        "category": "Spirituality / Cultural / Aarti",
+        "description": "Located at the Parmarth Niketan Ashram in Swargashram, this is one of the most famous sites for the evening Ganga Aarti. The ceremony is led by Vedic priests and ashram residents (rishikumars) and features a massive statue of Lord Shiva in a meditative pose. The ritual involves soul-stirring bhajans, prayers, and the lighting of lamps on the banks of the holy Ganges.",
+        "images": ["/images/parmarth/image1.png"],
+        "mapsLink": "https://maps.app.goo.gl/8obdHdApZYwZtbcj7"
     }
   ],
   "categories": [
