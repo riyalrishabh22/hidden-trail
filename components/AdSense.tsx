@@ -24,6 +24,13 @@ export default function AdSense({
   useEffect(() => {
     if (isMounted) {
       try {
+        // Debug: Check if script loaded
+        if (typeof window.adsbygoogle === 'undefined') {
+          console.log('AdSense script not loaded yet');
+          return;
+        }
+        
+        console.log('Pushing ad to AdSense');
         (window.adsbygoogle = window.adsbygoogle || []).push({});
       } catch (error) {
         console.error("AdSense error:", error);
