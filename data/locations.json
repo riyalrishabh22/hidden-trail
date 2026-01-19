@@ -1,0 +1,79 @@
+{
+  "locations": [
+    {
+      "id": 1,
+      "name": "Triveni Ghat",
+      "category": "Spiritual / Aarti",
+      "description": "One of the most sacred ghats in Rishikesh, famous for its evening Ganga Aarti. A peaceful spot where three holy rivers are believed to meet. Perfect for experiencing the spiritual essence of Rishikesh.",
+      "images": ["/images/triveni-ghat/image1.png"],
+        "mapsLink": "https://maps.app.goo.gl/erBLVURcxAthLijb6"
+    },
+    {
+      "id": 2,
+      "name": "Janki Setu",
+      "category": "Bridge",
+      "description": "A beautiful pedestrian suspension bridge offering stunning views of the Ganges and surrounding hills. Less crowded than Laxman Jhula, it's perfect for peaceful walks and photography during sunset.",
+      "images": ["/images/janki-setu/image1.png"],
+      "mapsLink": "https://maps.app.goo.gl/TNPcXszeUZwLkgPW7"
+    },
+    {
+      "id": 3,
+      "name": "Neer Garh Waterfall",
+      "category": "Waterfall",
+      "description": "A stunning two-tier waterfall located about 5km from Rishikesh. A short trek through the forest leads you to this refreshing natural pool, perfect for a quick dip.",
+      "images": ["/images/neer-garh/image1.png"],
+      "mapsLink": "https://maps.app.goo.gl/gHKHJxgXPTqkjLDt7"
+    },
+    {
+      "id": 4,
+      "name": "Beatles Ashram",
+      "category": "Spiritual",
+      "description": "The abandoned ashram where The Beatles stayed in 1968. Now covered in colorful graffiti art, it offers a unique blend of spiritual history and street art in a serene forest setting.",
+      "images": ["/images/beatles-ashram/image1.png"],
+      "mapsLink": "https://maps.app.goo.gl/wNfsjQpobUBW6Fbz7"
+    },
+    {
+      "id": 5,
+      "name": "Patna Waterfall",
+      "category": "Waterfall",
+      "description": "A hidden gem away from the tourist crowds. This beautiful waterfall requires a scenic trek through villages and forests, offering an authentic local experience.",
+      "images": ["/images/patna-waterfall/image1.png"],
+      "mapsLink": "https://maps.app.goo.gl/3PM5HQ3bzXieg3JX9"
+    },
+    {
+      "id": 6,
+      "name": "Kunjapuri Temple",
+      "category": "Temple / Sunrise / Sunset",
+      "description": "Perched at 1676m altitude, this temple offers breathtaking panoramic views of the Himalayas. Famous for stunning sunrise views over snow-capped peaks.",
+      "images": ["/images/kunjapuri/image1.png"],
+      "mapsLink": "https://maps.app.goo.gl/N3dRUr64ocZsAHxFA"
+    },
+    {
+        "id":7,
+        "name":"Kasmoli",
+        "category":"Moutain / Secret spot",
+        "description": "Kasmoli is a serene village and emerging eco-tourism destination located in the Narendra Nagar Tehsil of Tehri Garhwal district, Uttarakhand, India. It is situated approximately 30–45 km from Rishikesh, making it a popular hidden escape for travelers seeking mountain solitude and Himalayan views.",
+        "images":["/images/kasmoli/image1.jpg"],
+        "mapsLink": "https://maps.google.com/?q=30.2245,78.4567"
+    },
+    {
+         "id": 8,
+        "name": "Little Buddha Cafe",
+        "category": "Cafe/Restaurant",
+        "description": "A popular, laid-back, treehouse-style cafe on the Laxman Jhula road, known among backpackers for its multi-cuisine menu (including vegan options) and outstanding views of the river and mountains from its balconies.",
+        "images": ["/images/little-buddha-cafe/image1.png"],
+        "mapsLink": "https://maps.app.goo.gl/opH2gKMyfQWgRyLYA"
+    }
+  ],
+  "categories": [
+    "All",
+    "Spiritual",
+    "Waterfall",
+    "Temple",
+    "Bridge",
+    "Viewpoint",
+    "Cafe",
+    "Adventure",
+    "Moutain"
+  ]
+}
