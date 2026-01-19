@@ -5,7 +5,6 @@ import Link from "next/link";
 import { Location } from "@/types";
 import { MapPin, ExternalLink, Share2, ArrowLeft, ImageOff } from "lucide-react";
 import { useState } from "react";
-import { generateSlug } from "@/lib/utils";
 import AdSense from "./AdSense";
 
 interface LocationDetailProps {
@@ -14,10 +13,9 @@ interface LocationDetailProps {
 
 export default function LocationDetail({ location }: LocationDetailProps) {
   const [shareSuccess, setShareSuccess] = useState(false);
-  const slug = generateSlug(location.name);
 
   const handleShare = async () => {
-    const url = `${window.location.origin}/location/${slug}`;
+    const url = `${window.location.origin}/location/${location.id}`;
 
     try {
       if (navigator.share) {

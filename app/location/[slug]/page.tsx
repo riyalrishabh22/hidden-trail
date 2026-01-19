@@ -2,7 +2,6 @@ import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import locationsData from "@/data/locations.json";
 import LocationDetail from "@/components/LocationDetail";
-import { generateSlug } from "@/lib/utils";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -11,7 +10,7 @@ interface PageProps {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const location = locationsData.locations.find(
-    (loc) => generateSlug(loc.name) === slug
+    (loc) => loc.id.toString() === slug
   );
 
   if (!location) {
@@ -33,14 +32,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export async function generateStaticParams() {
   return locationsData.locations.map((location) => ({
-    slug: generateSlug(location.name),
+    slug: location.id.toString(),
   }));
 }
 
 export default async function LocationPage({ params }: PageProps) {
   const { slug } = await params;
   const location = locationsData.locations.find(
-    (loc) => generateSlug(loc.name) === slug
+    (loc) => loc.id.toString() === slug
   );
 
   if (!location) {

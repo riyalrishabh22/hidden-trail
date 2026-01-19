@@ -5,7 +5,6 @@ import Link from "next/link";
 import { Location } from "@/types";
 import { MapPin, ExternalLink, ImageOff, Share2 } from "lucide-react";
 import { useState, forwardRef } from "react";
-import { generateSlug } from "@/lib/utils";
 
 interface LocationCardProps {
   location: Location;
@@ -16,13 +15,12 @@ const LocationCard = forwardRef<HTMLDivElement, LocationCardProps>(
   ({ location, isHighlighted = false }, ref) => {
     const mainImage = location.images?.[0];
     const [shareSuccess, setShareSuccess] = useState(false);
-    const slug = generateSlug(location.name);
 
     const handleShare = async (e: React.MouseEvent) => {
       e.preventDefault();
       e.stopPropagation();
 
-      const url = `${window.location.origin}/location/${slug}`;
+      const url = `${window.location.origin}/location/${location.id}`;
 
       try {
         if (navigator.share) {
@@ -42,7 +40,7 @@ const LocationCard = forwardRef<HTMLDivElement, LocationCardProps>(
     };
 
     return (
-      <Link href={`/location/${slug}`}>
+      <Link href={`/location/${location.id}`}>
         <div
           ref={ref}
           className={`group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border cursor-pointer ${
