@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Location } from "@/types";
 import { MapPin, ExternalLink, ImageOff, Share2 } from "lucide-react";
 import { useState, forwardRef } from "react";
@@ -21,7 +22,7 @@ const LocationCard = forwardRef<HTMLDivElement, LocationCardProps>(
       e.preventDefault();
       e.stopPropagation();
 
-      const url = `${window.location.origin}?location=${slug}`;
+      const url = `${window.location.origin}/location/${slug}`;
 
       try {
         if (navigator.share) {
@@ -41,14 +42,15 @@ const LocationCard = forwardRef<HTMLDivElement, LocationCardProps>(
     };
 
     return (
-      <div
-        ref={ref}
-        className={`group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border ${
-          isHighlighted
-            ? "border-emerald-500 ring-4 ring-emerald-200 animate-pulse"
-            : "border-gray-100"
-        }`}
-      >
+      <Link href={`/location/${slug}`}>
+        <div
+          ref={ref}
+          className={`group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border cursor-pointer ${
+            isHighlighted
+              ? "border-emerald-500 ring-4 ring-emerald-200"
+              : "border-gray-100"
+          }`}
+        >
         {/* Image Container */}
         <div className="relative h-56 overflow-hidden bg-gray-100">
           {mainImage ? (
@@ -88,25 +90,12 @@ const LocationCard = forwardRef<HTMLDivElement, LocationCardProps>(
           <h3 className="text-xl font-semibold text-gray-900 mb-2">
             {location.name}
           </h3>
-          <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-3">
+          <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">
             {location.description}
           </p>
-
-          {/* Maps Link */}
-          <button
-            onClick={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              window.open(location.mapsLink, '_blank', 'noopener,noreferrer');
-            }}
-            className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-medium text-sm transition-colors"
-          >
-            <MapPin size={16} />
-            <span>View on Google Maps</span>
-            <ExternalLink size={14} />
-          </button>
         </div>
       </div>
+      </Link>
     );
   }
 );

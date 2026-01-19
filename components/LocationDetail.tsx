@@ -39,20 +39,20 @@ export default function LocationDetail({ location }: LocationDetailProps) {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-emerald-50 to-white">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4 md:py-8">
         {/* Back Button */}
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-medium mb-6"
+          className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-medium mb-4 md:mb-6 text-sm md:text-base"
         >
-          <ArrowLeft size={20} />
+          <ArrowLeft size={18} />
           <span>Back to all locations</span>
         </Link>
 
         {/* Main Content */}
-        <div className="bg-white rounded-3xl overflow-hidden shadow-xl">
+        <div className="bg-white rounded-2xl md:rounded-3xl overflow-hidden shadow-xl">
           {/* Hero Image */}
-          <div className="relative h-96 bg-gray-100">
+          <div className="relative h-64 md:h-96 bg-gray-100">
             {mainImage ? (
               <Image
                 src={mainImage}
@@ -74,33 +74,34 @@ export default function LocationDetail({ location }: LocationDetailProps) {
           </div>
 
           {/* Content */}
-          <div className="p-8">
-            <div className="flex items-start justify-between gap-4 mb-6">
-              <h1 className="text-4xl font-bold text-gray-900">
+          <div className="p-5 md:p-8">
+            <div className="flex items-start justify-between gap-3 md:gap-4 mb-4 md:mb-6">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
                 {location.name}
               </h1>
               
               {/* Share Button */}
               <button
                 onClick={handleShare}
-                className="flex items-center gap-2 px-4 py-2 bg-emerald-600 text-white rounded-full hover:bg-emerald-700 transition-colors"
+                className="flex items-center gap-2 px-3 md:px-4 py-2 bg-emerald-600 text-white rounded-full hover:bg-emerald-700 transition-colors flex-shrink-0"
               >
-                <Share2 size={18} />
-                <span className="hidden sm:inline">
+                <Share2 size={16} className="md:hidden" />
+                <Share2 size={18} className="hidden md:block" />
+                <span className="hidden sm:inline text-sm md:text-base">
                   {shareSuccess ? "Copied!" : "Share"}
                 </span>
               </button>
             </div>
 
-            <p className="text-gray-700 text-lg leading-relaxed mb-8">
+            <p className="text-gray-700 text-sm md:text-lg leading-relaxed mb-6 md:mb-8">
               {location.description}
             </p>
 
             {/* Additional Images */}
             {location.images && location.images.length > 1 && (
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 mb-6 md:mb-8">
                 {location.images.slice(1).map((img, idx) => (
-                  <div key={idx} className="relative h-48 rounded-xl overflow-hidden">
+                  <div key={idx} className="relative h-32 md:h-48 rounded-lg md:rounded-xl overflow-hidden">
                     <Image
                       src={img}
                       alt={`${location.name} - Image ${idx + 2}`}
@@ -118,11 +119,11 @@ export default function LocationDetail({ location }: LocationDetailProps) {
               href={location.mapsLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-6 py-3 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 rounded-full font-medium transition-colors"
+              className="inline-flex items-center gap-2 md:gap-3 px-4 md:px-6 py-2.5 md:py-3 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 rounded-full font-medium transition-colors text-sm md:text-base"
             >
-              <MapPin size={20} />
+              <MapPin size={18} />
               <span>View on Google Maps</span>
-              <ExternalLink size={16} />
+              <ExternalLink size={14} />
             </a>
           </div>
         </div>
