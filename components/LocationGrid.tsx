@@ -80,11 +80,12 @@ export default function LocationGrid({ locations, categories }: LocationGridProp
       // If no search term, just filter by category
       if (!searchTerm.trim()) return matchesCategory;
 
-      // Fuzzy search in name, category, and description
+      // Fuzzy search in name, category, and description (with null/undefined check)
+      const description = location.description || '';
       const matchesSearch =
         fuzzySearch(location.name, searchTerm) ||
         fuzzySearch(location.category, searchTerm) ||
-        fuzzySearch(location.description, searchTerm);
+        fuzzySearch(description, searchTerm);
 
       return matchesSearch && matchesCategory;
     });

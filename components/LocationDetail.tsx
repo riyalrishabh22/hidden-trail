@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Location } from "@/types";
-import { MapPin, ExternalLink, Share2, ArrowLeft, ImageOff } from "lucide-react";
+import { MapPin, ExternalLink, Share2, ArrowLeft, ImageOff, Calendar, Info, AlertCircle } from "lucide-react";
 import { useState } from "react";
 import AdSense from "./AdSense";
 
@@ -15,6 +15,11 @@ export default function LocationDetail({ location }: LocationDetailProps) {
   const [shareSuccess, setShareSuccess] = useState(false);
 
   const handleShare = async () => {
+    // Guard against non-browser environments
+    if (typeof window === 'undefined' || typeof navigator === 'undefined') {
+      return;
+    }
+
     const url = `${window.location.origin}/location/${location.id}`;
 
     try {
@@ -24,7 +29,7 @@ export default function LocationDetail({ location }: LocationDetailProps) {
           text: location.description,
           url: url,
         });
-      } else {
+      } else if (navigator.clipboard) {
         await navigator.clipboard.writeText(url);
         setShareSuccess(true);
         setTimeout(() => setShareSuccess(false), 2000);
@@ -35,6 +40,10 @@ export default function LocationDetail({ location }: LocationDetailProps) {
   };
 
   const mainImage = location.images?.[0];
+  
+  // Calculate word count from location description
+  // Note: This is the SHORT description - need to expand to 1200+ words
+  const contentWordCount = location.description.trim().split(/\s+/).length;
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-emerald-50 to-white">
@@ -74,11 +83,6 @@ export default function LocationDetail({ location }: LocationDetailProps) {
 
           {/* Content */}
           <div className="p-5 md:p-8">
-            {/* AdSense Ad - Top of Content */}
-            <div className="mb-6 md:mb-8">
-              <AdSense adSlot="4590652479" />
-            </div>
-            
             <div className="flex items-start justify-between gap-3 md:gap-4 mb-4 md:mb-6">
               <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
                 {location.name}
@@ -97,9 +101,29 @@ export default function LocationDetail({ location }: LocationDetailProps) {
               </button>
             </div>
 
+            {/* Content Quality Notice */}
+            {contentWordCount < 1200 && (
+              <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-6 flex items-start gap-3">
+                <AlertCircle className="text-amber-600 flex-shrink-0" size={20} />
+                <div className="text-sm text-amber-800">
+                  <strong>Content Expansion in Progress:</strong> We're currently adding detailed travel guides, 
+                  tips, and comprehensive information to all location pages to better serve you.
+                </div>
+              </div>
+            )}
+
             <p className="text-gray-700 text-sm md:text-lg leading-relaxed mb-6 md:mb-8">
               {location.description}
             </p>
+
+            {/* AdSense Ad - Only show if content meets threshold (after first major content block) */}
+            <div className="mb-6 md:mb-8">
+              <AdSense 
+                adSlot="4590652479" 
+                contentWordCount={contentWordCount}
+                minWordCount={1200}
+              />
+            </div>
 
             {/* Additional Images */}
             {location.images && location.images.length > 1 && (

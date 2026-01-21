@@ -72,7 +72,7 @@ export default function TermsOfService() {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold text-gray-800 mb-3">Disclaimer of Warranties</h2>
               <p className="text-gray-700 leading-relaxed">
-                Hidden Trails is provided "as is" without warranties of any kind. We do not guarantee that the website will be uninterrupted, secure, or error-free.
+                Hidden Trails is provided without warranties of any kind. We do not guarantee that the website will be uninterrupted, secure, or error-free.
               </p>
             </section>
 

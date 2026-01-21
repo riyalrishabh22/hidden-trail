@@ -30,6 +30,16 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/contact" className="text-gray-600 hover:text-emerald-600 transition-colors">
+                  Contact Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/advertise" className="text-gray-600 hover:text-emerald-600 transition-colors">
+                  Advertise With Us
+                </Link>
+              </li>
+              <li>
                 <Link href="/privacy" className="text-gray-600 hover:text-emerald-600 transition-colors">
                   Privacy Policy
                 </Link>
@@ -37,6 +47,11 @@ export default function Footer() {
               <li>
                 <Link href="/terms" className="text-gray-600 hover:text-emerald-600 transition-colors">
                   Terms of Service
+                </Link>
+              </li>
+              <li>
+                <Link href="/dmca" className="text-gray-600 hover:text-emerald-600 transition-colors">
+                  DMCA Policy
                 </Link>
               </li>
             </ul>

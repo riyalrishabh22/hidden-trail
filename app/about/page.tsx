@@ -78,17 +78,111 @@ export default function About() {
                 Why Hidden Trails?
               </h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                We are passionate locals and travel enthusiasts who have spent years exploring every corner of Rishikesh. Our team personally visits and verifies each location before adding it to our collection.
+                We are passionate locals and travel enthusiasts who have spent years exploring every corner of Rishikesh. 
+                Our team personally visits and verifies each location before adding it to our collection. This hands-on 
+                approach ensures that every recommendation on our platform is accurate, up-to-date, and genuinely worth 
+                your time.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Whether you are a first-time visitor planning your inaugural trip to the Yoga Capital, or a returning 
+                traveler seeking new adventures, Hidden Trails helps you experience Rishikesh in a way that most people 
+                never do — authentic, peaceful, and unforgettable. We understand that every traveler is unique, which is 
+                why our diverse collection includes everything from challenging mountain treks to serene meditation spots, 
+                from hidden cafes perfect for digital nomads to sacred temples steeped in ancient traditions.
               </p>
               <p className="text-gray-700 leading-relaxed">
-                Whether you're a first-time visitor or a returning traveler, Hidden Trails helps you experience Rishikesh in a way that most people never do — authentic, peaceful, and unforgettable.
+                Our platform was born from a simple observation: despite being one of India's most visited spiritual 
+                destinations, Rishikesh's most enchanting locations remain largely undiscovered by the majority of tourists. 
+                We saw travelers spending their entire visit in the same crowded areas, missing out on the authentic 
+                experiences that make this region truly special. Hidden Trails bridges this gap by connecting curious 
+                explorers with the secret spots that locals have cherished for generations.
+              </p>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">Our Story</h2>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Hidden Trails began as a personal travel journal maintained by a group of adventure enthusiasts and 
+                spiritual seekers who made Rishikesh their second home. Over the years, as we trekked to remote waterfalls, 
+                meditated at sunrise viewpoints, and discovered peaceful corners along the Ganges, we realized that we had 
+                accumulated a treasure trove of knowledge that could benefit fellow travelers.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                What started as sharing recommendations with friends and fellow hostel travelers gradually evolved into a 
+                structured database of hidden locations. We began documenting not just the places themselves, but practical 
+                details like how to reach them, the best times to visit, what to bring, and insider tips that can make the 
+                difference between a mediocre experience and an extraordinary one.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                Today, Hidden Trails serves thousands of travelers each month, helping them discover the Rishikesh that 
+                exists beyond Instagram hotspots and overcrowded tourist circuits. Our community has grown to include 
+                contributors from around the world who share our passion for authentic travel and sustainable tourism.
+              </p>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">Our Values</h2>
+              <div className="space-y-4">
+                <div className="bg-gray-50 border-l-4 border-emerald-600 p-4">
+                  <h3 className="font-semibold text-gray-800 mb-2">Authenticity</h3>
+                  <p className="text-sm text-gray-700">
+                    We only recommend places we have personally experienced. Every location in our database has been 
+                    visited and verified by our team. No paid placements, no tourist traps—just genuine recommendations 
+                    from people who truly know and love Rishikesh.
+                  </p>
+                </div>
+                <div className="bg-gray-50 border-l-4 border-emerald-600 p-4">
+                  <h3 className="font-semibold text-gray-800 mb-2">Sustainability</h3>
+                  <p className="text-sm text-gray-700">
+                    We believe in responsible tourism that preserves the natural beauty and cultural integrity of 
+                    Rishikesh. Our recommendations emphasize respect for local communities, environmental conservation, 
+                    and sustainable travel practices. We encourage visitors to leave no trace and contribute positively 
+                    to the local economy.
+                  </p>
+                </div>
+                <div className="bg-gray-50 border-l-4 border-emerald-600 p-4">
+                  <h3 className="font-semibold text-gray-800 mb-2">Community</h3>
+                  <p className="text-sm text-gray-700">
+                    Hidden Trails is more than a website—it's a community of like-minded travelers who value meaningful 
+                    experiences over Instagram photo ops. We foster connections between travelers and locals, encouraging 
+                    cultural exchange and mutual respect.
+                  </p>
+                </div>
+                <div className="bg-gray-50 border-l-4 border-emerald-600 p-4">
+                  <h3 className="font-semibold text-gray-800 mb-2">Accuracy</h3>
+                  <p className="text-sm text-gray-700">
+                    Travel information changes constantly. We regularly update our location database to ensure accuracy. 
+                    If you find outdated information or have updates to share, we welcome your input to keep our platform 
+                    reliable and helpful.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section className="mb-8">
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">What Makes Us Different</h2>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Unlike generic travel websites that cover hundreds of destinations superficially, Hidden Trails focuses 
+                exclusively on Rishikesh and its surrounding regions. This specialization allows us to maintain deep 
+                knowledge of the area and provide insights that broader platforms simply cannot match.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                We go beyond basic directions and opening hours. Each location entry includes contextual information about 
+                the history, cultural significance, seasonal variations, difficulty levels, and personal anecdotes from our 
+                visits. We want you to understand not just where to go, but why these places matter and how to experience 
+                them in the most meaningful way.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                Our search and filtering system is designed specifically for the way travelers actually plan their 
+                Rishikesh adventures. Whether you're looking for spiritual experiences, nature escapes, adventure activities, 
+                or peaceful cafes to work from, our intuitive interface helps you find exactly what you need.
               </p>
             </section>
 
             <section className="mb-8">
               <h2 className="text-2xl font-semibold text-gray-800 mb-4">Join Our Community</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                We're constantly adding new locations and updating our guides. If you've discovered a hidden gem in Rishikesh that we haven't featured yet, we'd love to hear from you!
+                We are constantly adding new locations and updating our guides. If you discovered a hidden gem in Rishikesh that we have not featured yet, we will love to hear from you!
               </p>
               <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-6">
                 <p className="text-gray-800 font-medium mb-2">Get in Touch</p>
@@ -106,7 +200,7 @@ export default function About() {
 
             <section>
               <p className="text-center text-gray-600 italic pt-6 border-t border-gray-200">
-                "The journey of a thousand miles begins with a single step." <br />
+                The journey of a thousand miles begins with a single step <br />
                 Let Hidden Trails be your guide to the road less traveled.
               </p>
             </section>

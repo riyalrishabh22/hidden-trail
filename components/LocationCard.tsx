@@ -20,6 +20,11 @@ const LocationCard = forwardRef<HTMLDivElement, LocationCardProps>(
       e.preventDefault();
       e.stopPropagation();
 
+      // Guard against non-browser environments
+      if (typeof window === 'undefined' || typeof navigator === 'undefined') {
+        return;
+      }
+
       const url = `${window.location.origin}/location/${location.id}`;
 
       try {
@@ -29,7 +34,7 @@ const LocationCard = forwardRef<HTMLDivElement, LocationCardProps>(
             text: location.description,
             url: url,
           });
-        } else {
+        } else if (navigator.clipboard) {
           await navigator.clipboard.writeText(url);
           setShareSuccess(true);
           setTimeout(() => setShareSuccess(false), 2000);

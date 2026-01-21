@@ -71,7 +71,7 @@ export default function PrivacyPolicy() {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold text-gray-800 mb-3">Third-Party Services</h2>
               <p className="text-gray-700 leading-relaxed">
-                We use Google AdSense to display advertisements on our site. Google may use cookies to serve ads based on your prior visits to our website or other websites. You can opt out of personalized advertising by visiting Google's Ads Settings.
+                We use Google AdSense to display advertisements on our site. Google may use cookies to serve ads based on your prior visits to our website or other websites. You can opt out of personalized advertising by visiting Google Ads Settings.
               </p>
             </section>
 
@@ -98,7 +98,7 @@ export default function PrivacyPolicy() {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold text-gray-800 mb-3">Changes to This Policy</h2>
               <p className="text-gray-700 leading-relaxed">
-                We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy on this page and updating the "Last updated" date.
+                We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy on this page and updating the Last updated date.
               </p>
             </section>
 
